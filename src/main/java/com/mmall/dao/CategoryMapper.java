@@ -17,5 +17,10 @@ public interface CategoryMapper {
 
     int updateByPrimaryKey(Category record);
 
+    /**
+     * 查找子类
+     * @param parentId
+     * @return
+     */
     List<Category> selectCategoryChildrenByParentId(Integer parentId);
 }
