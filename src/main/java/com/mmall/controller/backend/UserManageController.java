@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * @date 2021/1/25 11:46
  */
 @Controller
-@RequestMapping("/manage/user/")
+@RequestMapping("/manage/user")
 public class UserManageController {
 
     @Autowired
@@ -39,4 +39,5 @@ public class UserManageController {
         }
         return response;
     }
+
 }
