@@ -55,12 +55,12 @@ public class ServerResponse<T> implements Serializable {
     /**
      * 响应成功
      * 开放构造方法
-     * 疑问: 这种方式开放构造方法的好处？ 创建对象时不用再传递参数，直接调用有语义的方法就行
+     * 疑问: 这种方式开放构造方法的好处？
      * @param <T>
      * @return
      */
     public static <T> ServerResponse<T> createBySuccess() {
-        return new ServerResponse<T>(ResponseCode.SUCCESS.getCode());
+        return new ServerResponse<>(ResponseCode.SUCCESS.getCode());
     }
 
     /**
