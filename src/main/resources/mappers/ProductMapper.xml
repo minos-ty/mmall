@@ -186,6 +186,7 @@
   </select>
 
 
+<!--  where 标签会把其后面出现的第一个 and|or 替换成 where  -->
   <select id="selectByNameAndProductId" resultMap="BaseResultMap" parameterType="map">
     SELECT
     <include refid="Base_Column_List"/>
@@ -202,7 +203,7 @@
   
   <select id="selectByNameAndCategoryIds" resultMap="BaseResultMap" parameterType="map">
     SELECT
-    <include refid="Base_Column_List"></include>
+    <include refid="Base_Column_List"/>
     from mmall_product
     where status = 1
     <if test="productName != null">

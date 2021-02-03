@@ -39,6 +39,6 @@ public interface ICategoryService {
      * @param categoryId
      * @return
      */
-    ServerResponse getCategoryAndDeepChildrenCategory(Integer categoryId);
+    ServerResponse<List<Integer>> getCategoryAndDeepChildrenCategory(Integer categoryId);
 
 }

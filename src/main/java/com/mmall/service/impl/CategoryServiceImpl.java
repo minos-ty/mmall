@@ -72,11 +72,11 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public ServerResponse getCategoryAndDeepChildrenCategory(Integer categoryId) {
+    public ServerResponse<List<Integer>> getCategoryAndDeepChildrenCategory(Integer categoryId) {
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet, categoryId);
 
-        List<Integer> categoryList  = Lists.newArrayList();
+        List<Integer> categoryList = Lists.newArrayList();
         if (categoryId != null) {
             for (Category categoryItm : categorySet) {
                 categoryList.add(categoryItm.getId());
@@ -87,9 +87,10 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * 递归查找所有当前分类的所有子节点
+     *
      * @return
      */
-    private Set<Category> findChildCategory(Set<Category> categorySet ,Integer categoryId) {
+    private Set<Category> findChildCategory(Set<Category> categorySet, Integer categoryId) {
 
         // 判断当前给的分类id是否存在,如果存在就放入集合
         Category category = categoryMapper.selectByPrimaryKey(categoryId);
